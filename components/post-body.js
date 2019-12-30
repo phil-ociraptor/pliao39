@@ -16,8 +16,7 @@ class PostBody extends React.Component {
         <style jsx>{`
           .body {
             max-width: 880px;
-            margin: 80px auto 40px;
-            padding: 10px 30px;
+            padding: 10px 0px;
             white-space: pre-wrap;
           }
           :global(figure) {

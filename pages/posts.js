@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
 
-const Home = () => (
+const Posts = () => (
   <div>
     <Head>
       <title>Home</title>
@@ -13,17 +13,15 @@ const Home = () => (
     <Nav />
 
     <div className="hero">
-      <h1 className="title">Below the Fold 📰</h1>
+      <h1 className="title">Posts</h1>
       <p className="description">
       </p>
 
-      <div className="row">
-        <a href="/posts">
-          <h3>Posts &rarr;</h3>
-        </a>
-        <a href="/projects">
-          <h3>Projects &rarr;</h3>
-        </a>
+      <div className="content">
+        <ul>
+          <li><a href="/idea-to-product-hunt-launch"> 5 Day Product Hunt Launch</a></li>
+          <li><a href="/job-search"> Anatomy of a Job Search</a></li>
+        </ul>
       </div>
     </div>
 
@@ -46,37 +44,14 @@ const Home = () => (
       .description {
         text-align: center;
       }
-      .row {
+      .content {
         max-width: 880px;
         margin: 40px auto 40px;
         display: flex;
-        flex-direction: column;
-        // justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
+        flex-direction: row;
       }
     `}</style>
   </div>
 )
 
-export default Home
+export default Posts
