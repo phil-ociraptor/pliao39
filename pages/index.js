@@ -1,20 +1,14 @@
 import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
-import Phil from '../components/phil'
-import posts from '../data/posts'
-import projects from '../data/projects'
+import Head from '../components/head'
+import Logo from '../components/logo'
 import PostList from '../components/post-list'
 import ProjectList from '../components/project-list'
-import Logo from '../components/logo'
+import posts from '../data/posts'
+import projects from '../data/projects'
 
 const Home = () => (
   <div>
-    <Head>
-      <title>@pliao39</title>
-      <link rel="icon" href="/favicon.ico" />
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
-    </Head>
+    <Head title={"@pliao39"}/>
 
     <div className="index-container">
       <div className="hero">

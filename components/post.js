@@ -1,6 +1,6 @@
 import React from 'react'
 import PostBody from './post-body'
-import Head from 'next/head'
+import Head from '../components/head'
 import Nav from '../components/nav'
 import Datestamp from '../components/datestamp'
 import Pill from '../components/pill'
@@ -15,11 +15,7 @@ class Post extends React.Component {
   render() {
     return (
       <div>
-        <Head>
-          <title>{this.props.post.title}</title>
-          <link rel="icon" href="/favicon.ico" />
-          <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
-        </Head>
+        <Head title={this.props.post.title}/>
 
         <Nav />
         <div className="page-container">
