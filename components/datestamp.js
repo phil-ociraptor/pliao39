@@ -1,4 +1,5 @@
 import React from 'react'
+import Pill from './pill'
 
 const monthMap = {
   0: 'Jan',
@@ -26,18 +27,6 @@ function formatDate(dateStr) {
 }
 
 
-const Datestamp = (props) => (
-  <div className="datestamp">
-    {formatDate(props.value)}
-
-    <style jsx>{`
-    .datestamp {
-      background-color: #EDF2F7;
-      padding: 4px 6px;
-      border-radius: 6px
-    }
-    `}</style>
-  </div>
-)
+const Datestamp = (props) => <Pill value={formatDate(props.value)} />
 
 export default Datestamp

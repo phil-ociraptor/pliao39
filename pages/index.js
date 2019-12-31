@@ -1,6 +1,12 @@
 import React from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
+import Phil from '../components/phil'
+import posts from '../data/posts'
+import projects from '../data/projects'
+import PostList from '../components/post-list'
+import ProjectList from '../components/project-list'
+import Logo from '../components/logo'
 
 const Home = () => (
   <div>
@@ -10,30 +16,42 @@ const Home = () => (
       <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
     </Head>
 
-    <Nav />
+    <div className="index-container">
+      <div className="hero">
+        <Logo size={'medium'}/>
+        <p className="description">
+          Hey there - I'm Phil and you've found my personal site.
+        </p>
 
-    <div className="hero">
-      <h1 className="title">Below the Fold 📰</h1>
-      <p className="description">
-      </p>
-
-      <div className="row">
-        <a href="/posts">
-          <h3>Posts &rarr;</h3>
-        </a>
-        <a href="/projects">
-          <h3>Projects &rarr;</h3>
-        </a>
+        <div className="list-container">
+          <PostList posts={posts}/>
+        </div>
+        <div className="list-container">
+          <ProjectList projects={projects}/>
+        </div>
       </div>
     </div>
-
     <style jsx global>{`
       body {
         font-family: 'Open Sans', sans-serif;
       }
+      .index-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .list-container {
+        margin: 20px 0px;
+        width: 100%;
+      }
       .hero {
+        max-width: 600px
         width: 100%;
         color: #333;
+        margin: 100px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .title {
         margin: 0;

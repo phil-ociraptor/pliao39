@@ -56,7 +56,7 @@ class Post extends React.Component {
             display: flex;
             flex-direction: column;
             align-items: left;
-            max-width: 880px;
+            max-width: 600px;
             width: 100%;
           }
           .subtitle {

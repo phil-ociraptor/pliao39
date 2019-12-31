@@ -13,7 +13,8 @@ const api = new GhostContentAPI({
 async function getPosts() {
   return await api.posts
     .browse({
-      limit: "all"
+      limit: 'all',
+      include: 'tags',
     })
     .catch(err => {
       console.error(err);
@@ -32,7 +33,7 @@ async function run() {
   console.log('Updating post data for:')
   console.log(Object.keys(postMap))
 
-  var outputPath = path.join(__dirname, '..', 'posts', 'data.js');
+  var outputPath = path.join(__dirname, '..', 'data', 'posts.js');
   fs.writeFileSync(outputPath, `export default ${JSON.stringify(postMap)}`);
 }
 
