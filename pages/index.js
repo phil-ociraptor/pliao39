@@ -11,7 +11,7 @@ import Logo from '../components/logo'
 const Home = () => (
   <div>
     <Head>
-      <title>Home</title>
+      <title>@pliao39</title>
       <link rel="icon" href="/favicon.ico" />
       <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
     </Head>
