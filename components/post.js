@@ -45,7 +45,7 @@ class Post extends React.Component {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 20px;
+            // margin: 20px;
             // width: 100%;
           }
           .post-container {
