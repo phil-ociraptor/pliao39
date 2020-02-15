@@ -40,6 +40,13 @@ class Post extends React.Component {
         <style jsx global>{`
           body {
             font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+          }
+          body hr {
+            height: 1px;
+            border: none;
+            background-color: gray;
           }
           .page-container {
             display: flex;
