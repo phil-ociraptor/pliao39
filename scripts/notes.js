@@ -57,14 +57,14 @@ export default () => (<Post post={notes['${noteName}']}/>)`;
 
 async function run() {
   let notes = await getWeeklyNotes();
-  // let notesDataDir = path.join(__dirname, "..", "data", "notes.js");
-  // await fsPromises.writeFile(
-  //   notesDataDir,
-  //   `export default ${JSON.stringify(notes)}`
-  // );
-  // await Promise.all(
-  //   Object.keys(notes).map(x => generatePostsForNote(x, notes[x]))
-  // );
+  let notesDataDir = path.join(__dirname, "..", "data", "notes.js");
+  await fsPromises.writeFile(
+    notesDataDir,
+    `export default ${JSON.stringify(notes)}`
+  );
+  await Promise.all(
+    Object.keys(notes).map(x => generatePostsForNote(x, notes[x]))
+  );
   console.log(Object.keys(notes));
 }
 
