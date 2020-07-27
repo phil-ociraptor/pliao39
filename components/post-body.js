@@ -1,23 +1,22 @@
-import React from 'react'
+import React from "react";
 
 class PostBody extends React.Component {
-
   constructor(props) {
-    super(props)
+    super(props);
   }
-
-
 
   render() {
     return (
       <React.Fragment>
-        <div className='body' dangerouslySetInnerHTML={{ __html: this.props.value }} />
-        
+        <div
+          className="body"
+          dangerouslySetInnerHTML={{ __html: this.props.value }}
+        />
+
         <style jsx>{`
           .body {
             max-width: 880px;
             padding: 10px 0px;
-            white-space: pre-wrap;
           }
           :global(figure) {
             width: 100%;
@@ -29,7 +28,7 @@ class PostBody extends React.Component {
           }
         `}</style>
       </React.Fragment>
-    )
+    );
   }
 }
-export default PostBody
+export default PostBody;

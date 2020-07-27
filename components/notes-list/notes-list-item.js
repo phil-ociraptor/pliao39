@@ -1,14 +1,11 @@
 import React from "react";
-import Datestamp from "./datestamp";
-import Pill from "./pill";
+import Datestamp from "../datestamp";
+import Pill from "../pill";
 
-const PostListItem = props => (
+const NotesListItem = props => (
   <div className="item">
     <div className="item-field">
-      <Datestamp value={props.post.published_at} />
-    </div>
-    <div className="item-field">
-      <a href={props.post.slug}>{props.post.title} </a>
+      <a href={`weekly_notes/${props.post.title}`}>{props.post.title} </a>
     </div>
     <div className="item-field">
       <Pill value={props.post.tags && props.post.tags[0].name} />
@@ -32,4 +29,4 @@ const PostListItem = props => (
   </div>
 );
 
-export default PostListItem;
+export default NotesListItem;

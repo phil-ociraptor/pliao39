@@ -6,12 +6,17 @@
     "dev": "next dev -- -p 4000",
     "build": "next build",
     "start": "next start",
-    "ghost": "node scripts/ghost.js"
+    "ghost": "node scripts/ghost.js",
+    "notes": "node scripts/notes.js",
+    "sync": "yarn ghost && yarn notes"
   },
   "dependencies": {
     "@tryghost/content-api": "^1.3.5",
     "next": "9.3.2",
     "react": "16.12.0",
     "react-dom": "16.12.0"
+  },
+  "devDependencies": {
+    "marked": "^1.1.1"
   }
 }

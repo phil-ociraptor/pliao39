@@ -1,45 +1,51 @@
-import React from 'react'
-import PostBody from './post-body'
-import Head from '../components/head'
-import Nav from '../components/nav'
-import Datestamp from '../components/datestamp'
-import Pill from '../components/pill'
+import React from "react";
+import PostBody from "./post-body";
+import Head from "../components/head";
+import Nav from "../components/nav";
+import Datestamp from "../components/datestamp";
+import Pill from "../components/pill";
 
 class Post extends React.Component {
-
   constructor(props) {
-    super(props)
+    super(props);
   }
-
 
   render() {
     return (
       <div>
-        <Head title={this.props.post.title}/>
+        <Head title={this.props.post.title} />
 
         <Nav />
         <div className="page-container">
           <div className="post-container">
             <h1 className="title">{this.props.post.title}</h1>
             <div className="subtitle">
-              <div className="subtitle-item">
-                <Datestamp className="subtitle-item" value={this.props.post.published_at}/>
-              </div>
-              <div className="subtitle-item">
-                <Pill className="subtitle-item" value={`${this.props.post.reading_time} Minutes`}/>
-              </div>
+              {this.props.post.published_at && (
+                <div className="subtitle-item">
+                  <Datestamp
+                    className="subtitle-item"
+                    value={this.props.post.published_at}
+                  />
+                </div>
+              )}
+              {this.props.post.reading_time && (
+                <div className="subtitle-item">
+                  <Pill
+                    className="subtitle-item"
+                    value={`${this.props.post.reading_time} Minutes`}
+                  />
+                </div>
+              )}
 
               {/* {Object.keys(this.props.post).join('\n')} */}
-
             </div>
             <PostBody value={this.props.post.html} />
           </div>
-
         </div>
 
         <style jsx global>{`
           body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: "Open Sans", sans-serif;
             font-size: 14px;
             line-height: 24px;
           }
@@ -67,12 +73,11 @@ class Post extends React.Component {
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: left; 
+            justify-content: left;
             // width: 400px;
           }
           .subtitle-item {
             margin: 0px 10px 0px 0px;
-
           }
           .hero {
             width: 100%;
@@ -113,7 +118,7 @@ class Post extends React.Component {
           }
         `}</style>
       </div>
-    )
+    );
   }
 }
-export default Post
+export default Post;
