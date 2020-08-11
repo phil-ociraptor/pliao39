@@ -1,1 +1,0 @@
-The root of productivity is self-esteem.
