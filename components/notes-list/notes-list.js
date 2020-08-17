@@ -8,24 +8,32 @@ class NotesList extends React.Component {
 
   render() {
     return (
-      <div className="post-list">
-        <div className="post-header">Notes</div>
-        {Object.keys(this.props.posts).map(key => {
-          const post = this.props.posts[key];
-          return (
-            <div className="post-row">
-              <NotesListItem post={post} />
-            </div>
-          );
-        })}
+      <div className="notes-list">
+        <div className="notes-header">Notes</div>
+        {Object.keys(this.props.notes)
+          .sort((a, b) => {
+            let aDate = new Date(a);
+            let bDate = new Date(b);
+            return bDate - aDate;
+            // return aDate - bDate;
+          })
+          .map(key => {
+            const note = this.props.notes[key];
+            const meta = this.props.meta[key];
+            return (
+              <div key={key} className="notes-row">
+                <NotesListItem note={note} meta={meta} />
+              </div>
+            );
+          })}
 
         <style jsx>{`
-          .post-list {
+          .notes-list {
           }
-          .post-header {
+          .notes-header {
             font-size: 20px;
           }
-          .post-row {
+          .notes-row {
           }
         `}</style>
       </div>

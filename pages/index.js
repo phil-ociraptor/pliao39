@@ -5,6 +5,7 @@ import PostList from "../components/post-list";
 import ProjectList from "../components/project-list";
 import posts from "../data/posts";
 import notes from "../data/notes";
+import notesMeta from "../data/notes-meta";
 import projects from "../data/projects";
 import NotesList from "../components/notes-list/notes-list";
 import Twitter from "../components/social-icons/twitter";
@@ -42,7 +43,7 @@ const Home = () => (
           <PostList posts={posts} />
         </div>
         <div className="list-container" id="notes">
-          <NotesList posts={notes} />
+          <NotesList notes={notes} meta={notesMeta} />
         </div>
         <div className="list-container" id="projects">
           <ProjectList projects={projects} />
@@ -52,6 +53,9 @@ const Home = () => (
     <style jsx global>{`
       body {
         font-family: "Open Sans", sans-serif;
+      }
+      a {
+        text-decoration: none;
       }
       .description {
         max-width: 400px;
