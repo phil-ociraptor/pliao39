@@ -56,6 +56,12 @@ const Home = () => (
       }
       a {
         text-decoration: none;
+        color: #ea9a00;
+      }
+      a:hover {
+        text-decoration: underline;
+        text-decoration-color: #686868;
+        text-decoration-thickness: 2px;
       }
       .description {
         max-width: 400px;

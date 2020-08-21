@@ -4,6 +4,7 @@ import Head from "../components/head";
 import Nav from "../components/nav";
 import Datestamp from "../components/datestamp";
 import Pill from "../components/pill";
+import Layout from "./layout";
 
 class Post extends React.Component {
   constructor(props) {
@@ -13,35 +14,37 @@ class Post extends React.Component {
   render() {
     return (
       <div>
-        <Head title={this.props.post.title} />
+        <Layout>
+          <Head title={this.props.post.title} />
 
-        <Nav />
-        <div className="page-container">
-          <div className="post-container">
-            <h1 className="title">{this.props.post.title}</h1>
-            <div className="subtitle">
-              {this.props.post.published_at && (
-                <div className="subtitle-item">
-                  <Datestamp
-                    className="subtitle-item"
-                    value={this.props.post.published_at}
-                  />
-                </div>
-              )}
-              {this.props.post.reading_time && (
-                <div className="subtitle-item">
-                  <Pill
-                    className="subtitle-item"
-                    value={`${this.props.post.reading_time} Minutes`}
-                  />
-                </div>
-              )}
+          <Nav />
+          <div className="page-container">
+            <div className="post-container">
+              <h1 className="title">{this.props.post.title}</h1>
+              <div className="subtitle">
+                {this.props.post.published_at && (
+                  <div className="subtitle-item">
+                    <Datestamp
+                      className="subtitle-item"
+                      value={this.props.post.published_at}
+                    />
+                  </div>
+                )}
+                {this.props.post.reading_time && (
+                  <div className="subtitle-item">
+                    <Pill
+                      className="subtitle-item"
+                      value={`${this.props.post.reading_time} Minutes`}
+                    />
+                  </div>
+                )}
 
-              {/* {Object.keys(this.props.post).join('\n')} */}
+                {/* {Object.keys(this.props.post).join('\n')} */}
+              </div>
+              <PostBody value={this.props.post.html} />
             </div>
-            <PostBody value={this.props.post.html} />
           </div>
-        </div>
+        </Layout>
 
         <style jsx global>{`
           body {
