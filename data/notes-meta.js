@@ -1,4 +1,7 @@
 export default {
+  "2020-08-23": {
+    sections: ["Mental Health"]
+  },
   "2020-08-16": {
     sections: ["Mistakes", "Audio"]
   },
