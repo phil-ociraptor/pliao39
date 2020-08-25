@@ -3,6 +3,7 @@ const fsPromises = fs.promises;
 const path = require("path");
 
 const RSS = require("rss");
+import notes from "../data/notes";
 import notesMeta from "../data/notes-meta";
 import posts from "../data/posts";
 
@@ -19,22 +20,37 @@ let feed = new RSS({
 /* loop over data and add to feed */
 Object.keys(notesMeta).forEach(title => {
   const meta = notesMeta[title];
+  const url = `https://pliao39.com/weekly_notes/${title}`;
   feed.item({
     title,
-    url: `https://pliao39.com/weekly_notes/${title}`,
+    url,
     author: "Phil Liao",
     date: title,
+    custom_elements: [
+      {
+        content: [
+          { _attr: { type: "html", "xml:base": url } },
+          notes[title].html
+        ]
+      }
+    ],
     description: `This week's topics: ${meta.sections.join(", ")}`
   });
 });
 
 Object.keys(posts).forEach(title => {
   const post = posts[title];
+  const url = `https://pliao39.com/${post.slug}`;
   feed.item({
     title,
     description: post.custom_excerpt || post.excerpt,
-    url: `https://pliao39.com/${post.slug}`,
+    url,
     author: "Phil Liao",
+    custom_elements: [
+      {
+        content: [{ _attr: { type: "html", "xml:base": url } }, post.html]
+      }
+    ],
     date: post.published_at
   });
 });
