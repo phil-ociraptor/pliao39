@@ -14,6 +14,15 @@ const Layout = props => {
           text-decoration-color: #686868;
           text-decoration-thickness: 2px;
         }
+        img {
+          max-width: 100%;
+        }
+        blockquote {
+          padding: 0px 10px;
+          border-left: solid;
+          border-color: #ffca65;
+          font-style: italic;
+        }
       `}</style>
     </React.Fragment>
   );
