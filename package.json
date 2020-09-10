@@ -20,6 +20,7 @@
     "rss": "^1.2.2"
   },
   "devDependencies": {
-    "marked": "^1.1.1"
+    "marked": "^1.1.1",
+    "sitemap": "^6.3.0"
   }
 }
