@@ -33,7 +33,9 @@ const createAndSaveSitemap = async () => {
   const allPages = getAllFiles("./pages")
     .map(f => f.split("pages")[1])
     .map(f => f.split(".")[0])
-    .filter(f => f !== "index.js");
+    .filter(f => !/index/.test(f));
+
+  console.log(allPages);
 
   // Map them into a form that the sitemap module understands
   // See docs: https://www.npmjs.com/package/sitemap
