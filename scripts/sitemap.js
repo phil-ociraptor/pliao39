@@ -21,17 +21,6 @@ const getAllFiles = function (dirPath, arrayOfFiles) {
   return arrayOfFiles;
 };
 
-const allPages = getAllFiles("./pages")
-  .map(f => f.split("pages")[1])
-  .map(f => f.split(".")[0])
-  .filter(f => f !== "index.js");
-
-const links = allPages.map(f => {
-  return {
-    url: f
-  };
-});
-
 const genSitemap = async links => {
   const stream = new SitemapStream({ hostname: "https://pliao39.com" });
   return streamToPromise(Readable.from(links).pipe(stream)).then(data =>
@@ -39,11 +28,23 @@ const genSitemap = async links => {
   );
 };
 
-const run = async () => {
+const createAndSaveSitemap = async () => {
+  // Get a list of all the files
+  const allPages = getAllFiles("./pages")
+    .map(f => f.split("pages")[1])
+    .map(f => f.split(".")[0])
+    .filter(f => f !== "index.js");
+
+  // Map them into a form that the sitemap module understands
+  // See docs: https://www.npmjs.com/package/sitemap
+  const links = allPages.map(f => {
+    return {
+      url: f
+    };
+  });
   const xml = await genSitemap(links);
-  console.log(xml);
   let sitemapFilePath = path.join(__dirname, "..", "public", "sitemap.xml");
   fsPromises.writeFile(sitemapFilePath, xml);
 };
 
-run();
+createAndSaveSitemap();
