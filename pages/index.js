@@ -52,7 +52,8 @@ const Home = () => (
     </div>
     <style jsx global>{`
       body {
-        font-family: "Open Sans", sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Open Sans",
+          sans-serif;
       }
       a {
         text-decoration: none;

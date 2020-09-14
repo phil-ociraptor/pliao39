@@ -1,4 +1,12 @@
 export default {
+  "2020-09-13": {
+    sections: [
+      "Attention",
+      "How to Take Smart Notes",
+      "Portability",
+      "Miscellaneous"
+    ]
+  },
   "2020-09-06": {
     sections: ["Meme Marketing", "Open Source Business Models", "Miscellaneous"]
   },
