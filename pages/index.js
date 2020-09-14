@@ -54,6 +54,8 @@ const Home = () => (
       body {
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Open Sans",
           sans-serif;
+        line-height: 24px;
+        font-weight: 300;
       }
       a {
         text-decoration: none;

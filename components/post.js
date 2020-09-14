@@ -52,6 +52,7 @@ class Post extends React.Component {
               "Open Sans", sans-serif;
             font-size: 14px;
             line-height: 24px;
+            font-weight: 300;
           }
           body hr {
             height: 1px;
