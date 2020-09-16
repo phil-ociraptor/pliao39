@@ -17,16 +17,22 @@ const Home = () => (
     <div className="index-container">
       <div className="hero">
         <Logo size={"medium"} />
-        <p className="description">
-          Hey there - I'm Phil and you've found my personal site. Below you'll
-          find some <a href="#posts">posts</a> (from a time when I was trying to
-          be too perfect on the internet), some <a href="#notes">notes</a>{" "}
-          (where I stop giving a shit), and a list of
-          <a href="#projects">projects</a> (where I don't know what I'm doing)
-        </p>
+        <div className="text-start">
+          <p className="description">
+            Hey 👋, I'm Phil and you've found my personal site. Below you'll
+            find <a href="#posts">posts</a>, <a href="#notes">notes</a>{" "}
+            (half-baked, weekly ideas), and a list of{" "}
+            <a href="#projects">projects</a>. This site is a work in progress,
+            and expect it to change frequently.
+          </p>
+          <p className="description">
+            To reach out DM me{" "}
+            <a href="https://twitter.com/pliao39">on Twitter!</a>
+          </p>
 
-        <div>
-          <Twitter />
+          <div>
+            <Twitter />
+          </div>
         </div>
 
         <div className="list-container" id="posts">
@@ -95,27 +101,11 @@ const Home = () => (
         flex-direction: column;
         // justify-content: space-around;
       }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
+      .text-start {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
     `}</style>
   </div>
