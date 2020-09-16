@@ -19,20 +19,10 @@ const Home = () => (
         <Logo size={"medium"} />
         <p className="description">
           Hey there - I'm Phil and you've found my personal site. Below you'll
-          find some{" "}
-          <a href="#posts">
-            <strong>posts</strong>
-          </a>{" "}
-          (from a time when I was trying to be too perfect on the internet),
-          some{" "}
-          <a href="#notes">
-            <strong>notes</strong>
-          </a>{" "}
+          find some <a href="#posts">posts</a> (from a time when I was trying to
+          be too perfect on the internet), some <a href="#notes">notes</a>{" "}
           (where I stop giving a shit), and a list of
-          <a href="#projects">
-            <strong> projects</strong>
-          </a>{" "}
-          (where I don't know what I'm doing)
+          <a href="#projects">projects</a> (where I don't know what I'm doing)
         </p>
 
         <div>
