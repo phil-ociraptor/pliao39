@@ -49,22 +49,20 @@ class MyHead extends React.Component {
           <meta property="og:image" content={this.props.img} />
         )}
 
-        <meta property="twitter:card" content="summary_large_image" />
+        {/* HOLY SHIT Twitter needs the name field, not property. AARGGHGHGHH */}
+        <meta name="twitter:card" content="summary_large_image" />
         {this.props.slug && (
           <meta
-            property="twitter:url"
+            name="twitter:url"
             content={`https://pliao39.com/${this.props.slug}`}
           />
         )}
-        <meta property="twitter:title" content={this.props.title} />
+        <meta name="twitter:title" content={this.props.title} />
         {this.props.description && (
-          <meta
-            property="twitter:description"
-            content={this.props.description}
-          />
+          <meta name="twitter:description" content={this.props.description} />
         )}
         {this.props.img && (
-          <meta property="twitter:image" content={this.props.img} />
+          <meta name="twitter:image" content={this.props.img} />
         )}
       </Head>
     );
