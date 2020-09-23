@@ -1,11 +1,10 @@
-import React from 'react'
-import Head from 'next/head'
+import React from "react";
+import Head from "next/head";
 
 class MyHead extends React.Component {
-
   // TODO - define the props
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   setGoogleTags() {
@@ -23,15 +22,27 @@ class MyHead extends React.Component {
     return (
       <Head>
         <title>{this.props.title}</title>
-        <link rel='icon' href='/favicon.ico' />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+          rel="stylesheet"
+        />
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190391-1"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-155190391-1"
+        ></script>
         <script dangerouslySetInnerHTML={this.setGoogleTags()} />
+        <meta property="og:title" content={this.props.title} />
+        {this.props.description && (
+          <meta property="og:description" content={this.props.description} />
+        )}
+        {this.props.img && (
+          <meta property="og:image" content={this.props.img} />
+        )}
       </Head>
-
-    )
+    );
   }
 }
 
-export default MyHead
+export default MyHead;

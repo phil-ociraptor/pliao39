@@ -7,7 +7,13 @@ import Content from "../../data/books/how-to-take-smart-notes.mdx";
 
 const Home = () => (
   <div>
-    <Head title={"How to Take Smart Notes"} />
+    <Head
+      title={"How to Take Smart Notes - Review"}
+      img={"https://pliao39.s3.amazonaws.com/httsn_all-fine-options.jpg"}
+      description={
+        "When it comes to information, most of us are living paycheck to paycheck. Learn how to start compounding your knowlege in this book review of How to Take Smart Notes by Sönke Ahrens"
+      }
+    />
     <Layout>
       <Nav />
       <Content />
