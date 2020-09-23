@@ -3,7 +3,9 @@ import React from "react";
 const Layout = props => {
   return (
     <React.Fragment>
-      {props.children}
+      <div className="page-container">
+        <div className="post-container">{props.children}</div>
+      </div>
       <style jsx global>{`
         a {
           text-decoration: none;
@@ -22,6 +24,35 @@ const Layout = props => {
           border-left: solid;
           border-color: #ffca65;
           font-style: italic;
+        }
+        hr {
+          border: 1px solid #cecece;
+          width: 95%;
+          margin: 25px 0px;
+        }
+        figure {
+          width: 100%;
+          max-width: 880px;
+          margin: 10px 0px;
+        }
+        figcaption {
+          font-style: italic;
+          text-align: center;
+          font-size: 10pt;
+        }
+        .page-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 20px;
+          // width: 100%;
+        }
+        .post-container {
+          display: flex;
+          flex-direction: column;
+          align-items: left;
+          max-width: 600px;
+          width: 100%;
         }
       `}</style>
     </React.Fragment>
