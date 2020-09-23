@@ -8,6 +8,7 @@ import Content from "../../data/books/how-to-take-smart-notes.mdx";
 const Home = () => (
   <div>
     <Head
+      slug={"books/how-to-take-smart-notes"}
       title={"How to Take Smart Notes - Review"}
       img={"https://pliao39.s3.amazonaws.com/httsn_all-fine-options.jpg"}
       description={

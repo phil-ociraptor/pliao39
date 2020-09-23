@@ -33,12 +33,38 @@ class MyHead extends React.Component {
           src="https://www.googletagmanager.com/gtag/js?id=UA-155190391-1"
         ></script>
         <script dangerouslySetInnerHTML={this.setGoogleTags()} />
+
+        <meta property="og:type" content="website" />
+        {this.props.slug && (
+          <meta
+            property="og:url"
+            content={`https://pliao39.com/${this.props.slug}`}
+          />
+        )}
         <meta property="og:title" content={this.props.title} />
         {this.props.description && (
           <meta property="og:description" content={this.props.description} />
         )}
         {this.props.img && (
           <meta property="og:image" content={this.props.img} />
+        )}
+
+        <meta property="twitter:card" content="summary_large_image" />
+        {this.props.slug && (
+          <meta
+            property="twitter:url"
+            content={`https://pliao39.com/${this.props.slug}`}
+          />
+        )}
+        <meta property="twitter:title" content={this.props.title} />
+        {this.props.description && (
+          <meta
+            property="twitter:description"
+            content={this.props.description}
+          />
+        )}
+        {this.props.img && (
+          <meta property="twitter:image" content={this.props.img} />
         )}
       </Head>
     );
