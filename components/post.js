@@ -43,13 +43,6 @@ class Post extends React.Component {
         </Layout>
 
         <style jsx global>{`
-          body {
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI,
-              "Open Sans", sans-serif;
-            font-size: 14px;
-            line-height: 24px;
-            font-weight: 300;
-          }
           body hr {
             height: 1px;
             border: none;

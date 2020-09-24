@@ -5,23 +5,35 @@ import Pill from "./pill";
 const PostListItem = props => (
   <div className="item">
     <div className="item-field">
-      <Datestamp value={props.post.published_at} />
-    </div>
-    <div className="item-field">
-      <a href={props.post.slug}>{props.post.title} </a>
-    </div>
-    <div className="item-field">
-      <Pill value={props.post.tags && props.post.tags[0].name} />
+      <div className="header">
+        <div className="post-title">
+          <a href={props.post.slug}>{props.post.title} </a>
+        </div>
+        <Datestamp value={props.post.published_at} />
+      </div>
+      <div className="excerpt">
+        <p>
+          {" "}
+          <em>{props.post.excerpt}</em>{" "}
+        </p>
+      </div>
     </div>
     <style jsx>{`
       .item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
         margin: 5px 0px;
       }
       .item-field {
-        margin: 0px 10px;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+      }
+      .post-title {
+        margin-right: 14px;
+      }
+      .excerpt {
+        font-size: 14px;
+        text-align: left;
       }
       .datestamp {
         background-color: #edf2f7;

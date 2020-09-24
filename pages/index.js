@@ -9,6 +9,8 @@ import notesMeta from "../data/notes-meta";
 import projects from "../data/projects";
 import NotesList from "../components/notes-list/notes-list";
 import Twitter from "../components/social-icons/twitter";
+import books from "../data/books";
+import BookList from "../components/books/book-list";
 
 const Home = () => (
   <div>
@@ -21,9 +23,9 @@ const Home = () => (
           <p className="description">
             Hey 👋, I'm Phil and you've found my personal site. Below you'll
             find <a href="#posts">posts</a>, <a href="#notes">notes</a>{" "}
-            (half-baked, weekly ideas), and a list of{" "}
-            <a href="#projects">projects</a>. This site is a work in progress,
-            and expect it to change frequently.
+            (half-baked, weekly ideas), <a href="#books">book</a> reviews and a
+            list of <a href="#projects">projects</a>. This site is a work in
+            progress, and expect it to change frequently.
           </p>
           <p className="description">
             To reach out DM me{" "}
@@ -41,9 +43,13 @@ const Home = () => (
         <div className="list-container" id="notes">
           <NotesList notes={notes} meta={notesMeta} />
         </div>
+        <div className="list-container" id="books">
+          <BookList books={books} />
+        </div>
         <div className="list-container" id="projects">
           <ProjectList projects={projects} />
         </div>
+        <div className="end">Thanks for visiting</div>
       </div>
     </div>
     <style jsx global>{`
@@ -73,6 +79,12 @@ const Home = () => (
       .list-container {
         margin: 20px 0px;
         width: 100%;
+      }
+      .end {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height 800px;
       }
       .hero {
         max-width: 660px;

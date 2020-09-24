@@ -10,7 +10,7 @@ const BookHead = props => (
     slug={`books/${props.slug}`}
     title={`${props.book.title} - Review`}
     img={props.book.metaImg || props.book.img}
-    description={props.book.description}
+    description={props.book.metaDescription || props.book.description}
   />
 );
 

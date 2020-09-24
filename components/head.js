@@ -51,6 +51,8 @@ class MyHead extends React.Component {
 
         {/* HOLY SHIT Twitter needs the name field, not property. AARGGHGHGHH  https://cards-dev.twitter.com/validator */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@pliao39" />
+        <meta name="twitter:creator" content="@pliao39" />
         {this.props.slug && (
           <meta
             name="twitter:url"

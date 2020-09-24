@@ -1,17 +1,19 @@
-import React from 'react'
+import React from "react";
 
-const Pill = (props) => (
-  <div className="datestamp">
-    {props.value}
+const Pill = props => (
+  <div>
+    <div className="container">{props.value}</div>
 
     <style jsx>{`
-    .datestamp {
-      background-color: #EDF2F7;
-      padding: 4px 6px;
-      border-radius: 6px
-    }
+      .container {
+        font-size: 12px;
+        background-color: #edf2f7;
+        padding: 1px 4px;
+        border-radius: 6px;
+        width: max-content;
+      }
     `}</style>
   </div>
-)
+);
 
-export default Pill
+export default Pill;

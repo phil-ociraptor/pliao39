@@ -16,7 +16,6 @@ const NotesListItem = props => {
           props.meta.sections &&
           props.meta.sections.map(s => {
             const hashLink = `${link}${toHashLink(s)}`;
-            console.log(s);
             return <Hashtag key={s} value={s} link={hashLink} />;
           })}
       </div>
