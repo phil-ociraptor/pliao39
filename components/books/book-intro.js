@@ -4,17 +4,23 @@ const BookIntro = props => (
   <div>
     <div className="container">
       <div className="image-wrapper">
-        <img src={props.img} alt={props.alt}></img>
+        <img
+          src={props.book.img || props.img}
+          alt={props.book.title || props.title}
+        ></img>
       </div>
       <div className="text-wrapper">
         <p>
-          <span className="heavy">Author:</span> {props.author}{" "}
+          <span className="heavy">Author:</span>{" "}
+          {props.book.author || props.author}{" "}
         </p>
         <p>
-          <span className="heavy">Who should read:</span> {props.who}
+          <span className="heavy">Who should read:</span>{" "}
+          {props.book.who || props.who}
         </p>
         <p>
-          <span className="heavy">Rating:</span> {props.rating} / 10
+          <span className="heavy">Rating:</span>{" "}
+          {props.book.rating || props.rating} / 10
         </p>
       </div>
     </div>

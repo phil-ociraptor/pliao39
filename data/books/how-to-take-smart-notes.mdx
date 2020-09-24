@@ -1,15 +1,12 @@
 import BookIntro from "../../components/books/book-intro";
+import books from "../books";
+const book = books["how-to-take-smart-notes"];
 
 # How to Take Smart Notes
 
 _Last updated: 2020-09-23_
 
-<BookIntro
-  img="https://m.media-amazon.com/images/I/41iVa0x-P-L.jpg"
-  author="Sönke Ahrens"
-  who="The #roamcult, academics, aspiring writers, personal knowledge management newbies, mental model aficionados"
-  rating={7}
-/>
+<BookIntro book={book} />
 <hr />
 
 When it comes to knowledge, most of us live paycheck to paycheck.

@@ -1,87 +1,24 @@
 import React from "react";
-import Head from "../../components/head";
 import Layout from "../../components/layout";
 import Nav from "../../components/nav";
 
 import Content from "../../data/books/how-to-take-smart-notes.mdx";
 
+import books from "../../data/books";
+import BookHead from "../../components/books/book-head";
+
+const slug = "how-to-take-smart-notes";
+const book = books[slug];
+
 const Home = () => (
   <div>
-    <Head
-      slug={"books/how-to-take-smart-notes"}
-      title={"How to Take Smart Notes - Review"}
-      img={"https://pliao39.s3.amazonaws.com/httsn_all-fine-options.jpg"}
-      description={
-        "When it comes to information, most of us are living paycheck to paycheck. Learn how to start compounding your knowlege in this book review of How to Take Smart Notes by Sönke Ahrens"
-      }
-    />
+    <BookHead slug={slug} book={book} />
     <Layout>
       <Nav />
       <Content />
     </Layout>
 
-    <style jsx global>{`
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Open Sans",
-          sans-serif;
-        line-height: 24px;
-        font-weight: 300;
-      }
-      a {
-        text-decoration: none;
-        color: #ea9a00;
-      }
-      a:hover {
-        text-decoration: underline;
-        text-decoration-color: #686868;
-        text-decoration-thickness: 2px;
-      }
-      .description {
-        max-width: 400px;
-      }
-      .index-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-      }
-      .list-container {
-        margin: 20px 0px;
-        width: 100%;
-      }
-      .hero {
-        max-width: 660px;
-        width: 100%;
-        color: #333;
-        margin: 100px 0px 0px 0px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 40px auto 40px;
-        display: flex;
-        flex-direction: column;
-        // justify-content: space-around;
-      }
-      .text-start {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    `}</style>
+    <style jsx global>{``}</style>
   </div>
 );
 
