@@ -30,10 +30,11 @@ class NotesList extends React.Component {
         <style jsx>{`
           .notes-list {
           }
+          .notes-list div:nth-child(even) {
+            background-color: #f8f8f8;
+          }
           .notes-header {
             font-size: 20px;
-          }
-          .notes-row {
           }
         `}</style>
       </div>

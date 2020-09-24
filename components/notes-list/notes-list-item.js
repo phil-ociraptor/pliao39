@@ -29,6 +29,12 @@ const NotesListItem = props => {
         .item-field {
           margin: 0px 10px;
           display: flex;
+          flex-wrap: wrap;
+        }
+        @media (max-width: 660px) {
+          .item-field {
+            flex-direction: column;
+          }
         }
         .datestamp {
           background-color: #edf2f7;
