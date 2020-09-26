@@ -1,6 +1,9 @@
 import React from "react";
 import Head from "next/head";
 
+const gaID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
+console.log("gaID is ", gaID);
+
 class MyHead extends React.Component {
   // TODO - define the props
   constructor(props) {
@@ -13,7 +16,7 @@ class MyHead extends React.Component {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'UA-155190391-1');
+        gtag('config', '${gaID}');
       `
     };
   }
@@ -30,7 +33,7 @@ class MyHead extends React.Component {
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-155190391-1"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaID}`}
         ></script>
         <script dangerouslySetInnerHTML={this.setGoogleTags()} />
 
