@@ -1,4 +1,7 @@
 export default {
+  "2020-09-29": {
+    sections: ["Book Reviews", "Writing and Coding", "Enabling Environments"]
+  },
   "2020-09-13": {
     sections: [
       "Attention",
