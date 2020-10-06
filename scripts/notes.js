@@ -40,10 +40,10 @@ async function getWeeklyNotes() {
  */
 async function generatePostsForNote(noteName, note) {
   const content = `import React from "react";
-import Post from "../../components/post";
+import Note from "../../components/note";
 import notes from "../../data/notes";
 
-export default () => (<Post post={notes['${noteName}']}/>)`;
+export default () => (<Note note={notes['${noteName}']}/>)`;
 
   let noteOutputDir = path.join(
     __dirname,

@@ -11,6 +11,7 @@ import NotesList from "../components/notes-list/notes-list";
 import Twitter from "../components/social-icons/twitter";
 import books from "../data/books";
 import BookList from "../components/books/book-list";
+import ButtondownSubscribe from "../components/buttondown-subscribe";
 
 const Home = () => (
   <div>
@@ -42,6 +43,7 @@ const Home = () => (
         </div>
         <div className="list-container" id="notes">
           <NotesList notes={notes} meta={notesMeta} />
+          <ButtondownSubscribe />
         </div>
         <div className="list-container" id="books">
           <BookList books={books} />

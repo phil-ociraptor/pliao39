@@ -1,4 +1,7 @@
 export default {
+  "2020-10-06": {
+    sections: ["Goodbye Feather", "Hello Dallas", "Miscellaneous"]
+  },
   "2020-09-29": {
     sections: ["Book Reviews", "Writing and Coding", "Enabling Environments"]
   },

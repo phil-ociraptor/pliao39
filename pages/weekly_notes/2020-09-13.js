@@ -1,5 +1,5 @@
 import React from "react";
-import Post from "../../components/post";
+import Note from "../../components/note";
 import notes from "../../data/notes";
 
-export default () => (<Post post={notes['2020-09-13']}/>)
+export default () => (<Note note={notes['2020-09-13']}/>)
