@@ -13,5 +13,19 @@ export default {
     metaImg: "https://pliao39.s3.amazonaws.com/httsn_all-fine-options.jpg",
     metaDescription:
       "When it comes to information, most of us are living paycheck to paycheck. Learn how to start compounding your knowledge in this book review of How to Take Smart Notes by Sönke Ahrens"
+  },
+  "the-boron-letters": {
+    title: "The Boron Letters",
+    author: "Gary Halbert and Bond Halbert",
+    img: "https://m.media-amazon.com/images/I/41sBFH5PGuL._SX260_.jpg",
+    rating: 8,
+    status: "read",
+    lastUpdated: "2020-10-08",
+    who: "Marketers, writers, entrepreneurs, hypnotists",
+    description:
+      "One part Arrested Development, one part copywriting masterclass, and one part self help book - The Boron Letters is one of the more interesting ways to learn entrepreneurship fundamentals and the basics of copywriting. Here are my takeaways",
+    metaImg: "https://pliao39.s3.amazonaws.com/tbl_social.jpg",
+    metaDescription:
+      "One part Arrested Development, one part copywriting masterclass, and one part self help book - The Boron Letters is one of the more interesting ways to learn entrepreneurship fundamentals and the basics of copywriting. Here are the main ideas from the book"
   }
 };
