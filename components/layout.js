@@ -10,7 +10,7 @@ const Layout = props => {
         body {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Open Sans",
             sans-serif;
-          line-height: 24px;
+          line-height: 26px;
           font-weight: 300;
         }
         a {
