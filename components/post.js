@@ -12,10 +12,16 @@ class Post extends React.Component {
   }
 
   render() {
+    console.log(this.props.post);
     return (
       <div>
         <Layout>
-          <Head title={this.props.post.title} />
+          <Head
+            slug={this.props.post.slug}
+            title={this.props.post.title}
+            img={this.props.post.feature_image}
+            description={this.props.post.excerpt}
+          />
 
           <Nav />
           <h1 className="title">{this.props.post.title}</h1>

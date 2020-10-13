@@ -40,6 +40,9 @@ const Layout = props => {
           width: 100%;
           max-width: 880px;
           margin: 10px 0px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         figcaption {
           font-style: italic;
