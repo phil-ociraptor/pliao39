@@ -9,7 +9,7 @@ const ButtondownSubscribe = () => (
         method="post"
         target="popupwindow"
         onsubmit="window.open('https://buttondown.email/pliao39', 'popupwindow')"
-        class="embeddable-buttondown-form"
+        className="embeddable-buttondown-form"
       >
         <input
           className="bd-email-input"
