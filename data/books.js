@@ -27,5 +27,20 @@ export default {
     metaImg: "https://pliao39.s3.amazonaws.com/tbl_social.jpg",
     metaDescription:
       "One part Arrested Development, one part copywriting masterclass, and one part self help book - The Boron Letters is one of the more interesting ways to learn entrepreneurship fundamentals and the basics of copywriting. Here are the main ideas from the book"
+  },
+  "rewire-your-anxious-brain": {
+    title: "Rewire Your Anxious Brain",
+    author: " Catherine Pittman and Elizabeth Karle",
+    img: "https://m.media-amazon.com/images/I/510lStQ1MyL._SY346_.jpg",
+    rating: 7,
+    status: "read",
+    lastUpdated: "2020-10-21",
+    who:
+      "Insomniacs, Worry warts, Meditators, Neuroscientist wananbes, Overwhelmed humans",
+    description:
+      "If you're curious to understand what happens in your brain when you experience anxiety and what actions you can take to retrain your brain (and why they work), you'll want to check out this book",
+    metaImg: "https://pliao39.s3.amazonaws.com/ryab_cover.jpg",
+    metaDescription:
+      "If you're curious to understand what happens in your brain when you experience anxiety and what actions you can take to retrain your brain (and why they work), you'll want to check out this book"
   }
 };
