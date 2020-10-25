@@ -36,7 +36,7 @@ export default {
     status: "read",
     lastUpdated: "2020-10-21",
     who:
-      "Insomniacs, Worry warts, Meditators, Neuroscientist wananbes, Overwhelmed humans",
+      "Insomniacs, Worry warts, Meditators, Neuroscientist wannabes, Overwhelmed humans",
     description:
       "If you're curious to understand what happens in your brain when you experience anxiety and what actions you can take to retrain your brain (and why they work), you'll want to check out this book",
     metaImg: "https://pliao39.s3.amazonaws.com/ryab_cover.jpg",
