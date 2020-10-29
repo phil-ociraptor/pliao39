@@ -22,6 +22,9 @@ const Layout = props => {
           text-decoration-color: #686868;
           text-decoration-thickness: 2px;
         }
+        strong {
+          font-weight: 600;
+        }
         img {
           max-width: 100%;
         }
