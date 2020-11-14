@@ -8,7 +8,7 @@ const ButtondownSubscribe = () => (
         action="https://buttondown.email/api/emails/embed-subscribe/pliao39"
         method="post"
         target="popupwindow"
-        onsubmit="window.open('https://buttondown.email/pliao39', 'popupwindow')"
+        onSubmit="window.open('https://buttondown.email/pliao39', 'popupwindow')"
         className="embeddable-buttondown-form"
       >
         <input
