@@ -7,79 +7,75 @@ import {
   axisLeft,
   scaleLinear
 } from "d3";
-let data = require("../../../data/typeracer.json");
 
-// Resources
-// https://observablehq.com/@d3/line-chart-with-tooltip
-// https://www.youtube.com/watch?v=yhwHUmjqxQw&list=PLDZ4p-ENjbiPo4WH7KdHjh_EMI7Ic8b2B&index=4
-// https://observablehq.com/@d3/gallery
-// https://blog.logrocket.com/guide-to-react-useeffect-hook/
-
-// TODO move this out
-// I didn't write this, thank you to the homies at
-// https://observablehq.com/@d3/moving-average
-function movingAverage(values, N) {
-  let i = 0;
-  let sum = 0;
-  const means = new Float64Array(values.length).fill(NaN);
-  for (let n = Math.min(N - 1, values.length); i < n; ++i) {
-    sum += values[i];
-  }
-  for (let n = values.length; i < n; ++i) {
-    sum += values[i];
-    means[i] = sum / N;
-    sum -= values[i - N + 1];
-  }
-  return means;
-}
-
-const RaceChart = props => {
-  const [raceData, setRaceData] = useState(data);
+const LineChart = props => {
+  const data = props.data;
   const svgRef = useRef();
   useEffect(() => {
+    // Select the svg element
     const svg = select(svgRef.current);
+    console.log(data);
+
+    // Describe the line
     const myLine = line()
-      .x((value, index) => xScale(value.gn))
-      // .x((value, index) => value.gn / 10)
-      .y(value => {
-        return yScale(value.wpm);
-      })
+      .x(value => xScale(value.x))
+      .y(value => yScale(value.y))
       .curve(curveCardinal);
 
+    // X axis
     const xScale = scaleLinear()
-      .domain([0, raceData.length - 1])
+      .domain([0, data.length - 1])
       .range([0, 500]);
     const xAxis = axisBottom(xScale);
 
+    // Y axis
     const yScale = scaleLinear()
       .domain([
         Math.max.apply(
           this,
-          raceData.map(x => x.wpm)
-        ) * 1.25,
+          data.map(v => v.y)
+        ) * 1.03,
         Math.min.apply(
           this,
-          raceData.map(x => x.wpm)
-        ) * 0.5
+          data.map(v => v.y)
+        ) * 0.95
       ])
       .range([0, 300]);
     const yAxis = axisLeft(yScale);
 
-    // myLine;
-    // svg.append("g")
-    // .call()
+    // Add the data
+
     svg
       .selectAll(".line")
-      .data([raceData])
+      .data([data])
       .join("path")
       .attr("d", value => myLine(value))
       .attr("fill", "none")
       .attr("stroke", "blue");
 
+    // svg
+    //   .selectAll(".line")
+    //   .data([data])
+    //   .join(
+    //     enter => {
+    //       console.log("entering");
+    //       enter
+    //         .append("path")
+    //         .attr("d", value => myLine(value))
+    //         .attr("fill", "none")
+    //         .attr("stroke", "blue");
+    //     },
+    //     update => {
+    //       console.log("updating");
+    //       update.attr("class", "updated");
+    //     },
+    //     exit => exit.remove()
+    //   );
+
+    // Draw the axes
     svg.select(".x-axis").call(xAxis);
     svg.select(".y-axis").call(yAxis);
-    console.log("svg: ", svg);
-  }, [raceData]);
+  }, [data]);
 
   return (
     <div className="container">
@@ -111,4 +107,4 @@ const RaceChart = props => {
   );
 };
 
-export default RaceChart;
+export default LineChart;
