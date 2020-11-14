@@ -27,3 +27,5 @@ yarn-error.log*
 # Custom
 obsidian/.obsidian
 obsidian/ignored
+
+.vercel
