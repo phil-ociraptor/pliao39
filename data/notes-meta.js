@@ -1,4 +1,7 @@
 export default {
+  "2020-11-15": {
+    sections: ["Self Expression", "Typeracer", "Miscellaneous"]
+  },
   "2020-10-06": {
     sections: ["Goodbye Feather", "Hello Dallas", "Miscellaneous"]
   },
