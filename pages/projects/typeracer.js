@@ -12,7 +12,7 @@ const Typeracer = () => {
 
   useEffect(() => {
     if (data.length === 0) {
-      fetch("/api/typeracer/games?user=pliao39")
+      fetch("https://typeracer-data.s3.amazonaws.com/users/pliao39.json")
         .then(res => res.json())
         .then(games => games.map(g => g.wpm))
         .then(games => {
