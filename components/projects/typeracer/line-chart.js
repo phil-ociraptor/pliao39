@@ -14,7 +14,6 @@ const LineChart = props => {
   useEffect(() => {
     // Select the svg element
     const svg = select(svgRef.current);
-    console.log(data);
 
     // Describe the line
     const myLine = line()

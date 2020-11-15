@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MovingAverageSelector from "./moving-average-selector";
 import LineChart from "./line-chart";
 
@@ -29,6 +29,10 @@ function movingAverage(values, N) {
 const MovingAverageChart = props => {
   const rawData = props.data;
   const [liveData, setLiveData] = useState(rawData);
+
+  useEffect(() => {
+    setLiveData(() => props.data);
+  }, [props.data]);
 
   return (
     <div className="container">
