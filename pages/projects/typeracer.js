@@ -12,11 +12,22 @@ const Typeracer = () => {
 
   useEffect(() => {
     if (data.length === 0) {
-      fetch("https://typeracer-data.s3.amazonaws.com/users/pliao39.json")
+      let user = "pliao39";
+      if (window) {
+        const params = new URLSearchParams(window.location.search);
+        user = params.get("user") || user;
+      }
+
+      fetch(`https://typeracer-data.s3.amazonaws.com/users/${user}.json`)
         .then(res => res.json())
         .then(games => games.map(g => g.wpm))
         .then(games => {
           setData(games);
+        })
+        .catch(err => {
+          console.error(
+            "TODO - inform the user that the selected user has not been loaded into the dataset"
+          );
         });
     }
   }, [data]);
