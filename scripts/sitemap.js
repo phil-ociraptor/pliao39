@@ -22,7 +22,7 @@ const getAllFiles = function (dirPath, arrayOfFiles) {
 };
 
 const genSitemap = async links => {
-  const stream = new SitemapStream({ hostname: "https://pliao39.com" });
+  const stream = new SitemapStream({ hostname: "https://philipliao.com" });
   return streamToPromise(Readable.from(links).pipe(stream)).then(data =>
     data.toString()
   );

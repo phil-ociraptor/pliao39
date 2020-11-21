@@ -9,18 +9,18 @@ import posts from "../data/posts";
 
 /* lets create an rss feed */
 let feed = new RSS({
-  title: "@pliao39",
+  title: "Phil Liao",
   description: "Phil's home on the internet",
-  feed_url: "https://pliao39.com/rss.xml",
-  site_url: "https://pliao39.com",
-  image_url: "https://pliao39.com/phil.jpg",
+  feed_url: "https://philipliao.com/rss.xml",
+  site_url: "https://philipliao.com",
+  image_url: "https://philipliao.com/phil.jpg",
   ttl: "60"
 });
 
 /* loop over data and add to feed */
 Object.keys(notesMeta).forEach(title => {
   const meta = notesMeta[title];
-  const url = `https://pliao39.com/weekly_notes/${title}`;
+  const url = `https://philipliao.com/weekly_notes/${title}`;
   feed.item({
     title,
     url,
@@ -40,7 +40,7 @@ Object.keys(notesMeta).forEach(title => {
 
 Object.keys(posts).forEach(title => {
   const post = posts[title];
-  const url = `https://pliao39.com/${post.slug}`;
+  const url = `https://philipliao.com/${post.slug}`;
   feed.item({
     title,
     description: post.custom_excerpt || post.excerpt,

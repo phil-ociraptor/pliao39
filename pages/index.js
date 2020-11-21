@@ -15,7 +15,7 @@ import ButtondownSubscribe from "../components/buttondown-subscribe";
 
 const Home = () => (
   <div>
-    <Head title={"@pliao39"} />
+    <Head title={"Phil Liao"} />
 
     <div className="index-container">
       <div className="hero">
@@ -30,7 +30,7 @@ const Home = () => (
           </p>
           <p className="description">
             To reach out DM me{" "}
-            <a href="https://twitter.com/pliao39">on Twitter!</a>
+            <a href="https://twitter.com/philipliao_">on Twitter!</a>
           </p>
 
           <div>

@@ -41,7 +41,7 @@ class MyHead extends React.Component {
         {this.props.slug && (
           <meta
             property="og:url"
-            content={`https://pliao39.com/${this.props.slug}`}
+            content={`https://philipliao.com/${this.props.slug}`}
           />
         )}
         <meta property="og:title" content={this.props.title} />
@@ -54,12 +54,12 @@ class MyHead extends React.Component {
 
         {/* HOLY SHIT Twitter needs the name field, not property. AARGGHGHGHH  https://cards-dev.twitter.com/validator */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@pliao39" />
-        <meta name="twitter:creator" content="@pliao39" />
+        <meta name="twitter:site" content="@philipliao_" />
+        <meta name="twitter:creator" content="@philipliao_" />
         {this.props.slug && (
           <meta
             name="twitter:url"
-            content={`https://pliao39.com/${this.props.slug}`}
+            content={`https://philipliao.com/${this.props.slug}`}
           />
         )}
         <meta name="twitter:title" content={this.props.title} />
