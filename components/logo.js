@@ -17,7 +17,7 @@ const Logo = props => {
       <div className="profile-pic">
         <Phil width={width} />
       </div>
-      <div>@pliao39</div>
+      <div>@philipliao_</div>
       <style jsx>{`
         .header {
           display: flex;
