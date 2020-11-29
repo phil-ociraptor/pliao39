@@ -46,11 +46,11 @@ Object.keys(posts).forEach(title => {
     description: post.custom_excerpt || post.excerpt,
     url,
     author: "Phil Liao",
-    custom_elements: [
-      {
-        content: [{ _attr: { type: "html", "xml:base": url } }, post.html]
-      }
-    ],
+    // custom_elements: [
+    //   {
+    //     content: [{ _attr: { type: "html", "xml:base": url } }, post.html]
+    //   }
+    // ],
     date: post.published_at
   });
 });
