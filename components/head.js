@@ -37,6 +37,12 @@ class MyHead extends React.Component {
         ></script>
         <script dangerouslySetInnerHTML={this.setGoogleTags()} />
 
+        {/* Meta description for SEO */}
+        {this.props.description && (
+          <meta name="description" content={this.props.description} />
+        )}
+
+        {/* OpenGraph */}
         <meta property="og:type" content="website" />
         {this.props.slug && (
           <meta
