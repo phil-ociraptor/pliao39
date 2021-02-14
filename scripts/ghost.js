@@ -6,7 +6,8 @@ const path = require("path");
 // Create API instance with site credentials
 const api = new GhostContentAPI({
   url: "http://localhost:2368",
-  key: "bff3a3c5f399533e5040aa863b",
+  // key: "bff3a3c5f399533e5040aa863b",
+  key: "218df7c8e411763194635d8e43",
   version: "v3"
 });
 
