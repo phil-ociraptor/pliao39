@@ -1,4 +1,7 @@
 export default {
+  "2021-02-20": {
+    sections: ["Extreme Weather", "Attacks on Asians", "Crypto Investing"]
+  },
   "2020-11-15": {
     sections: ["Self Expression", "Typeracer", "Miscellaneous"]
   },
