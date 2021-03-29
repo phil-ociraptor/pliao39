@@ -8,18 +8,30 @@ const api = new GhostContentAPI({
   url: "http://localhost:2368",
   // key: "bff3a3c5f399533e5040aa863b",
   key: "218df7c8e411763194635d8e43",
-  version: "v3"
+  version: "v4",
 });
 
 async function getPosts() {
   return await api.posts
     .browse({
       limit: "all",
-      include: "tags"
+      include: "tags",
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
     });
+}
+
+// A bit of a hack, but it works
+function formatYouTubeVideos(post) {
+  const html = post.html.replace(
+    /iframe width=\"[0-9]*\" height=\"[0-9]*\"/g,
+    'iframe width="600" height="350"'
+  );
+  return {
+    ...post,
+    html,
+  };
 }
 
 async function generatePostsForPost(post) {
@@ -35,7 +47,8 @@ export default () => <Post post={posts["${post.slug}"]} />;
 }
 
 async function run() {
-  let posts = await getPosts();
+  let rawPosts = await getPosts();
+  let posts = rawPosts.map(formatYouTubeVideos);
   let postMap = posts.reduce((acc, curr) => {
     if (curr.slug) {
       acc[curr.slug] = curr;
@@ -49,7 +62,7 @@ async function run() {
   var outputPath = path.join(__dirname, "..", "data", "posts.js");
   fs.writeFileSync(outputPath, `export default ${JSON.stringify(postMap)}`);
 
-  await Promise.all(posts.map(x => generatePostsForPost(x)));
+  await Promise.all(posts.map((x) => generatePostsForPost(x)));
 }
 
 run();
