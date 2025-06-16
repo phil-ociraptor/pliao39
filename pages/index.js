@@ -1,63 +1,43 @@
 import React from "react";
 import Head from "../components/head";
 import Logo from "../components/logo";
-import PostList from "../components/post-list";
-import ProjectList from "../components/project-list";
-import posts from "../data/posts";
-import notes from "../data/notes";
-import notesMeta from "../data/notes-meta";
-import projects from "../data/projects";
-import NotesList from "../components/notes-list/notes-list";
-import Twitter from "../components/social-icons/twitter";
-import books from "../data/books";
-import BookList from "../components/books/book-list";
-import ButtondownSubscribe from "../components/buttondown-subscribe";
+import Datestamp from "../components/datestamp";
 
 const Home = () => (
   <div>
     <Head title={"Phil Liao"} />
-
     <div className="index-container">
       <div className="hero">
         <Logo size={"medium"} />
         <div className="text-start">
           <p className="description">
-            Hey 👋, I'm Phil and you've found my personal site. Below you'll
-            find <a href="#posts">posts</a>, <a href="#notes">notes</a>{" "}
-            (half-baked, weekly ideas), <a href="#books">book</a> reviews and a
-            list of <a href="#projects">projects</a>. This site is a work in
-            progress, and expect it to change frequently.
+            Hey 👋, I'm Phil and I'm currently exploring ideas in crypto. In the past, I worked at 0x where I worked on RFQ, Gasless, Intents, and some Routing.
           </p>
           <p className="description">
-            To reach out DM me{" "}
-            <a href="https://twitter.com/philipliao_">on Twitter!</a>
+            You can find me on <a href="https://x.com/philipliao_">X</a> or <a href="https://www.github.com/phil-ociraptor">GitHub</a>
           </p>
 
-          <div>
-            <Twitter />
-          </div>
+          <h2 className="section-title">Writing</h2>
+          <ul className="post-links">
+            <li>
+              <a href="/stablecoins-go-brrrrr">Algo Stables</a>
+              <div className="datestamp-wrap"><Datestamp value="2020-12-19" /></div>
+            </li>
+            <li>
+              <a href="/how-to-type-faster">How to Type 100 WPM</a>
+              <div className="datestamp-wrap"><Datestamp value="2020-12-06" /></div>
+            </li>
+            <li>
+              <a href="/how-to-yield-farm">How to Yield Farm</a>
+              <div className="datestamp-wrap"><Datestamp value="2020-11-20" /></div>
+            </li>
+          </ul>
         </div>
-
-        <div className="list-container" id="posts">
-          <PostList posts={posts} />
-        </div>
-        <div className="list-container" id="notes">
-          <NotesList notes={notes} meta={notesMeta} />
-          <ButtondownSubscribe />
-        </div>
-        <div className="list-container" id="books">
-          <BookList books={books} />
-        </div>
-        <div className="list-container" id="projects">
-          <ProjectList projects={projects} />
-        </div>
-        <div className="end">Thanks for visiting</div>
       </div>
     </div>
     <style jsx global>{`
       body {
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Open Sans",
-          sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Open Sans", sans-serif;
         line-height: 24px;
         font-weight: 300;
       }
@@ -72,21 +52,12 @@ const Home = () => (
       }
       .description {
         max-width: 400px;
+        margin-bottom: 20px;
       }
       .index-container {
         display: flex;
         flex-direction: row;
         justify-content: center;
-      }
-      .list-container {
-        margin: 20px 0px;
-        width: 100%;
-      }
-      .end {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height 800px;
       }
       .hero {
         max-width: 660px;
@@ -97,29 +68,33 @@ const Home = () => (
         flex-direction: column;
         align-items: center;
       }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 40px auto 40px;
-        display: flex;
-        flex-direction: column;
-        // justify-content: space-around;
-      }
       .text-start {
         margin-top: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
+      }
+      .post-links {
+        list-style: disc;
+        align-self: flex-start;
+        text-align: left;
+        margin: 0 0 20px 0;
+      }
+      .post-links li {
+        margin-bottom: 10px;
+      }
+      .datestamp-wrap {
+        margin-left: 10px;
+        display: inline-block;
+      }
+      .section-title {
+        margin: 32px 0 12px 0;
+        font-size: 1.3em;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        color: #333;
+        text-align: left;
+        align-self: flex-start;
       }
     `}</style>
   </div>

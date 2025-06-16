@@ -15,7 +15,7 @@ const Logo = props => {
   return (
     <a href="/" className={className}>
       <div className="profile-pic">
-        <Phil width={width} />
+        <img src="/favicon.svg" alt="Phil Liao" />
       </div>
       <div>Phil Liao</div>
       <style jsx>{`
@@ -25,7 +25,7 @@ const Logo = props => {
           align-items: center;
         }
         .profile-pic {
-          padding: 0px 10px;
+          padding: 0px 5px;
         }
         a {
           color: #000000;

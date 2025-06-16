@@ -9,7 +9,7 @@ const Nav = () => (
 
     <style jsx>{`
     .nav-container {
-      margin: 20px 10px;
+      margin: 10px 0px;
     }
     `}</style>
   </nav>

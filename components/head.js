@@ -25,7 +25,7 @@ class MyHead extends React.Component {
     return (
       <Head>
         <title>{this.props.title}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <link
           href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
           rel="stylesheet"
