@@ -2,6 +2,7 @@ import React from "react";
 import Head from "../components/head";
 import Logo from "../components/logo";
 import Datestamp from "../components/datestamp";
+import posts from "../data/posts";
 
 const Home = () => (
   <div>
@@ -17,20 +18,14 @@ const Home = () => (
             You can find me on <a href="https://x.com/philipliao_">X</a> or <a href="https://www.github.com/phil-ociraptor">GitHub</a>
           </p>
 
-          <h2 className="section-title">Writing</h2>
+          <h2 className="section-title">Notes</h2>
           <ul className="post-links">
-            <li>
-              <a href="/stablecoins-go-brrrrr">Algo Stables</a>
-              <div className="datestamp-wrap"><Datestamp value="2020-12-19" /></div>
-            </li>
-            <li>
-              <a href="/how-to-type-faster">How to Type 100 WPM</a>
-              <div className="datestamp-wrap"><Datestamp value="2020-12-06" /></div>
-            </li>
-            <li>
-              <a href="/how-to-yield-farm">How to Yield Farm</a>
-              <div className="datestamp-wrap"><Datestamp value="2020-11-20" /></div>
-            </li>
+            {Object.keys(posts).map((post) => (
+              <li key={post}>
+                <a href={`/${post}`}>{posts[post].title}</a>
+                <div className="datestamp-wrap"><Datestamp value={posts[post].updated_at} /></div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
