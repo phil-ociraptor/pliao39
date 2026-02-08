@@ -12,7 +12,7 @@ const Home = () => (
         <Logo size={"medium"} />
         <div className="text-start">
           <p className="description">
-            Hey 👋, I'm Phil and I'm currently exploring ideas in crypto. In the past, I worked at 0x where I worked on RFQ, Gasless, Intents, and some Routing.
+            Hey 👋, I'm Phil and I work at 0x. There I focus on Meta aggregation and Cross Chain connectivity. Previously, RFQ, Intents, and DEX aggregation.
           </p>
           <p className="description">
             You can find me on <a href="https://x.com/philipliao_">X</a> or <a href="https://www.github.com/phil-ociraptor">GitHub</a>
