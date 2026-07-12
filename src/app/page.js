@@ -1,8 +1,11 @@
 "use client";
 import React from "react";
 import Logo from "../../components/logo";
-import Datestamp from "../../components/datestamp";
 import posts from "../../data/posts";
+
+function fmtDate(iso) {
+  return new Date(iso).toLocaleDateString("en-US", { month: "short", year: "numeric" });
+}
 
 export default function Home() {
   return (
@@ -20,10 +23,17 @@ export default function Home() {
 
             <h2 className="section-title">Notes</h2>
             <ul className="post-links">
-              {Object.keys(posts).map((post) => (
+              {/* Add new post slugs here to make them appear on the homepage */}
+              {Object.keys(posts).filter(post => [
+                "soros-on-reflexivity",
+                "how-to-type-faster",
+                "how-to-yield-farm",
+              ].includes(post)).map((post) => (
                 <li key={post}>
-                  <a href={`/${post}`}>{posts[post].title}</a>
-                  <div className="datestamp-wrap"><Datestamp value={posts[post].updated_at} /></div>
+                  <a href={`/${post}`} className="post-link-row">
+                    <span className="post-date">{fmtDate(posts[post].updated_at)}</span>
+                    <span>{posts[post].title}</span>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -32,4 +42,4 @@ export default function Home() {
       </div>
     </div>
   );
-} 
+}

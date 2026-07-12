@@ -1,10 +1,9 @@
 import React from "react";
-import Phil from "./phil";
 
 const widths = {
-  large: 150,
-  medium: 100,
-  small: 50
+  large: 120,
+  medium: 64,
+  small: 32
 };
 
 const Logo = props => {
@@ -14,32 +13,24 @@ const Logo = props => {
 
   return (
     <a href="/" className={className}>
-      <div className="profile-pic">
-        <img src="/favicon.svg" alt="Phil Liao" />
-      </div>
+      <img className="profile-pic" src="/favicon.svg" alt="Phil Liao" />
       <div>Phil Liao</div>
       <style jsx>{`
         .header {
           display: flex;
           flex-direction: row;
           align-items: center;
-        }
-        .profile-pic {
-          padding: 0px 5px;
-        }
-        a {
-          color: #000000;
+          gap: 10px;
+          color: #111;
           text-decoration: none;
         }
-        a.small {
-          font-size: 18px;
+        .profile-pic {
+          display: block;
+          flex-shrink: 0;
         }
-        a.medium {
-          font-size: 24px;
-        }
-        a.large {
-          font-size: 48px;
-        }
+        .header.small { font-size: 15px; }
+        .header.medium { font-size: 22px; }
+        .header.large { font-size: 40px; }
       `}</style>
     </a>
   );
