@@ -31,7 +31,7 @@ export default function Home() {
               ].includes(post)).map((post) => (
                 <li key={post}>
                   <a href={`/${post}`} className="post-link-row">
-                    <span className="post-date">{fmtDate(posts[post].updated_at)}</span>
+                    <span className="post-date">{fmtDate(posts[post].published_at)}</span>
                     <span>{posts[post].title}</span>
                   </a>
                 </li>
